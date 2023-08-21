@@ -8,8 +8,8 @@ function createArray (start, end) {
     
     return array;
 }
-let arr = createArray(2, 9);
-alert(arr); // [2,3,4,5,6,7,8,9]
+console.log(createArray(2, 9)); // [2,3,4,5,6,7,8,9]
+
 
 // Task 2
 
@@ -23,8 +23,8 @@ function repetitionNumbers(a, b) {
     }
     return result;
 }
-const repeatedArray = repetitionNumbers(1, 5);
-alert(repeatedArray);
+console.log(repetitionNumbers(1, 5));
+
 
 // Task 3
 function randArray(k) {
@@ -34,8 +34,8 @@ function randArray(k) {
     }
     return result;
 }
-const generateRandArray = randArray(5);
-alert(generateRandArray);
+console.log(randArray(5));
+
 
 //Task 4
 
@@ -48,8 +48,8 @@ function compact(initialArray) {
     }
     return resultArray;
 }
-const resultArray = compact([1, 2, 1, 3, 4]);
-alert(resultArray);
+console.log(compact([1, 2, 1, 3, 4]));
+
 
 // Task 5
 
@@ -81,10 +81,10 @@ function generalType(arr) {
             arrayString = arrayString.concat(innerArrayString);
         }
     }
-    
     return [arrayNumber, arrayString];
 }
-alert(JSON.stringify(arrNew));
+console.log(JSON.stringify(arrNew));
+
 
 // Task 6
 
@@ -99,12 +99,7 @@ function calc(a, b, op) {
         return a + b;
     }
 }
-
-calc(10, 2, 1); 
-
-
-
-
+console.log(calc(10, 2, 1)); 
 
 
 // Task 7
@@ -121,4 +116,16 @@ function findUnique(arr) {
 }
 let myArr = [1, 2, 3, 5, 3];
 const warning = findUnique(myArr);
-alert(warning);
+console.log(warning);
+
+
+// Extra Task
+function create(secretPassword) {
+    return function(inputPassword) {
+        return inputPassword === secretPassword;
+    };
+}
+const tom = create("pass_for_Tom");
+
+console.log(tom("pass_for_Tom")); // true 
+console.log(tom("pass_for_tom")); // false
