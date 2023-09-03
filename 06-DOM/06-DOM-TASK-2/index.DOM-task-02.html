@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Task-2</title>
+   <style>
+        body {
+        background-color: black; 
+        margin: 0; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; 
+    }
+
+    #content-container {
+        background-color: white; 
+        padding: 5px; 
+        
+    }
+</style>
+
+</head>
+<body>
+    <div id="content-container">
+        <h1 id="header">
+            I'm a big header!!!
+        </h1>
+        <div id="myDiv">
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+            <p>Third paragraph</p>
+            <p>Fourth paragraph</p>
+        </div>
+        <ul id="myList">
+            <li>Make</li>
+            <li>me</li>
+            <li>horizontal!</li>
+        </ul>
+        <span id="nvisibleSpan">Make me invisible, please!</span> 
+    </div>
+
+    <script>
+        const header = document.getElementById('header');
+        header.style.fontSize = '24px'; 
+        header.style.fontWeight = 'bold'; 
+        header.style.color = 'black'; 
+        header.style.backgroundColor = 'green'; 
+        header.style.padding = '10px'; 
+
+        const myDiv = document.getElementById('myDiv');
+        const paragraphs = myDiv.getElementsByTagName('p');
+        paragraphs[0].style.setProperty('font-weight', 'bold');
+        paragraphs[0].style.setProperty('color', 'black'); 
+
+        paragraphs[1].style.setProperty('color', 'red'); 
+
+        paragraphs[2].style.setProperty('text-decoration', 'underline'); 
+        paragraphs[2].style.setProperty('color', 'black'); 
+
+        paragraphs[3].style.setProperty('font-style', 'italic'); 
+        paragraphs[3].style.setProperty('color', 'black');
+
+        const myList = document.getElementById('myList');
+        const listItems = myList.getElementsByTagName('li');
+
+        for (let i = 0; i < listItems.length; i++) {
+            listItems[i].style.display = 'inline';
+        }
+
+        myList.style.textAlign = 'center';
+
+        const invisibleSpan = document.getElementById('nvisibleSpan');
+        invisibleSpan.style.display = 'none';
+    </script>
+</body>
+</html>

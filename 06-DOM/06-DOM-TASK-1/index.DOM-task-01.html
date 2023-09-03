@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-Task-1</title>
+</head>
+<body>
+    <ul id="list">List
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    
+    <script>
+    const list = document.getElementById('list');
+    const items = list.getElementsByTagName('li');
+    const itemsArray = Array.from(items);
+    const output = "";
+    output += itemsArray[0].textContent + ", ";
+    output += itemsArray[4].textContent + ", ";
+    output += itemsArray[1].textContent + ", ";
+    output += itemsArray[3].textContent + ", ";
+    output += itemsArray[2].textContent;
+    alert(output);
+</script>
+</body>
+</html>
