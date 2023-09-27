@@ -1,4 +1,18 @@
-const checkboxes = document.querySelectorAll("input[type='checkbox']");
+// Corrected Version
+$(document).ready(function() {
+    let checkboxes = $('input[type="checkbox"]');
+    checkboxes.change(function() {
+      let checkedCount = checkboxes.filter(':checked').length;
+      if (checkedCount >= 3) {
+        checkboxes.not(':checked').prop('disabled', true);
+      } else {
+        checkboxes.prop('disabled', false);
+      }
+    });
+  });
+
+// Previous Version
+/*const checkboxes = document.querySelectorAll("input[type='checkbox']");
         let checkedCount = 0;
 
         checkboxes.forEach(function(checkbox) {
@@ -19,4 +33,4 @@ const checkboxes = document.querySelectorAll("input[type='checkbox']");
                     });
                 }
             });
-        });
+        });*/
